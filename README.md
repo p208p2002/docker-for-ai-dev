@@ -1,5 +1,5 @@
 # Docker for AI DEV
-Dockerfiles for quickly create dev env with pytorch & tensorflow
+quickly create remote dev env for pytorch & tensorflow
 
 ## Feature
 - **jupyter**
