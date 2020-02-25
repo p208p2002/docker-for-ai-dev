@@ -30,8 +30,9 @@ COPY script_files/create_user.sh /create_user.sh
 RUN chmod 777 /create_user.sh
 
 # pytorch
-RUN wget https://download.pytorch.org/whl/cu100/torch-1.3.0%2Bcu100-cp36-cp36m-linux_x86_64.whl
-RUN pip install torch-1.3.0+cu100-cp36-cp36m-linux_x86_64.whl
+RUN wget https://download.pytorch.org/whl/cu101/torch-1.4.0-cp36-cp36m-linux_x86_64.whl
+RUN pip install torch-1.4.0-cp36-cp36m-linux_x86_64.whl
+RUN rm torch-1.4.0-cp36-cp36m-linux_x86_64.whl
 
 # jupyter
 COPY config_files/jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
@@ -41,7 +42,6 @@ RUN rm /etc/bash.bashrc
 RUN touch /etc/bash.bashrc
 
 # utf-8 zh_TW
-RUN apt-get update
 RUN apt-get install -y locales
 RUN locale-gen zh_TW.UTF-8
 RUN echo 'export LANGUAGE="zh_TW.UTF-8"' >> /etc/bash.bashrc
