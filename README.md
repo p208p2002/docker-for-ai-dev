@@ -1,9 +1,9 @@
 # Docker for AI DEV
-dockerfiles for quickly create dev env with pytorch & tensorflow
+Dockerfiles for quickly create dev env with pytorch & tensorflow
 
 ## Feature
 - **jupyter**
-- **web-vscode**
+- [**web-vscode**](https://github.com/cdr/code-server)
 - ssh
 - fail2ban
 - pytorch
