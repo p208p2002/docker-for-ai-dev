@@ -26,8 +26,8 @@ COPY config_files/jail.conf /etc/fail2ban/jail.conf
 RUN service fail2ban restart
 
 # script for create user
-COPY script_files/create_user.sh /create_user.sh
-RUN chmod 777 /create_user.sh
+COPY script_files/docker_start.sh /docker_start.sh
+RUN chmod 777 /docker_start.sh
 
 # pytorch
 RUN wget https://download.pytorch.org/whl/cu100/torch-1.3.0%2Bcu100-cp36-cp36m-linux_x86_64.whl
@@ -59,4 +59,4 @@ EXPOSE 8888
 EXPOSE 8080
 
 #
-ENTRYPOINT /create_user.sh && service fail2ban start && service ssh start && (nohup /code-server2.1698-vsc1.41.1-linux-x86_64/code-server --host 0.0.0.0  2> /dev/null&) &&(nohup jupyter notebook --allow-root --ip=0.0.0.0 2> /dev/null&)&& /bin/bash
+ENTRYPOINT /docker_start.sh && /bin/bash
