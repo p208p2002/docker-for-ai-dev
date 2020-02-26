@@ -34,3 +34,10 @@ nvidia-docker run -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 -
 ```
 docker run -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 --name=... -e"NAME=..." -e"PASSWORD=..." IMAGE_NAME
 ```
+
+## Web VScode Issues
+- can't use `tab` in terminal
+    1. at the top right of your terminal window, dropdown and set default shell to `/bin/bash`.
+    2. reopen terminal
+- [can't paste text to terminal](https://github.com/cdr/code-server/issues/1106)
+    - try `ctrl+shift+v` or `shift+insert`
