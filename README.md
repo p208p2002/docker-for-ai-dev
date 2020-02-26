@@ -24,15 +24,15 @@ docker build -t=TAG_NAME .
 
 #### with GPU and docker 19.03+
 ```
-docker run --gpus all -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 --name=... -e"NAME=..." -e"PASSWORD=..." IMAGE_NAME
+docker run --restart=always --gpus all -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 --name=... -e"NAME=..." -e"PASSWORD=..." IMAGE_NAME
 ```
 #### with nvidia-docker
 ```
-nvidia-docker run -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 --name=... -e"NAME=..." -e"PASSWORD=..." IMAGE_NAME
+nvidia-docker run --restart=always -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 --name=... -e"NAME=..." -e"PASSWORD=..." IMAGE_NAME
 ```
 #### only CPU
 ```
-docker run -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 --name=... -e"NAME=..." -e"PASSWORD=..." IMAGE_NAME
+docker run --restart=always -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 --name=... -e"NAME=..." -e"PASSWORD=..." IMAGE_NAME
 ```
 
 ## Web VScode Issues
