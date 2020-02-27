@@ -1,7 +1,7 @@
 # Run repeat
 service fail2ban start;
 service ssh start;
-(nohup /code-server2.1698-vsc1.41.1-linux-x86_64/code-server --host 0.0.0.0  2> /dev/null&);
+(nohup /code-server2.1698-vsc1.41.1-linux-x86_64/code-server --host 0.0.0.0 /tf 2> /dev/null&);
 (nohup jupyter notebook --allow-root --ip=0.0.0.0 2> /dev/null&);
 
 # Run once, hold otherwise
