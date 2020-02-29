@@ -19,7 +19,7 @@ Dockerfiles for quickly create remote dev env for pytorch & tensorflow
 - `-e"NAME=..."`
     - replace `...` to your username for ssh login
 - `-e"PASSWORD=..."`
-    - replace `...` to your password for ssh、jupyter、vscode
+    - replace `...` to your password for ssh, jupyter and vscode
 ### Default port
 - `ssh`:22
 - `jupyter`:8888
