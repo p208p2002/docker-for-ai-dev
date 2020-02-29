@@ -5,7 +5,6 @@ LABEL maintainer="p208p2002@gmail.com"
 RUN apt-get update
 RUN apt-get install -y sudo \ 
                         apt-utils \
-                        default-jdk \
                         wget \
                         vim \
                         git
