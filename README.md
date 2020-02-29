@@ -25,7 +25,7 @@ Dockerfiles for quickly create remote dev env for pytorch & tensorflow
 - `jupyter`:8888
 - `vscode`:8080
 ### CMD
-you can find more available **image tag** on [dockerhub](https://hub.docker.com/repository/docker/p208p2002/docker-for-ai-dev/tags?page=1)
+You can find more available **image tag** on [dockerhub](https://hub.docker.com/repository/docker/p208p2002/docker-for-ai-dev/tags?page=1)
 #### with GPU and docker 19.03+
 ```
 $ docker run --restart=always --gpus all -itd -p 22:22 -p 8888:8888 -p 8080:8080 -e"NAME=..." -e"PASSWORD=..." p208p2002/docker-for-ai-dev:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode
