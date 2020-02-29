@@ -22,8 +22,8 @@ Dockerfiles for quickly create remote dev env for pytorch & tensorflow
     - replace `...` to your password for ssh, jupyter and vscode
 ### Default port
 - `ssh`:22
-- `jupyter`:8888
-- `vscode`:8080
+- `jupyter`: 8888
+- `vscode`: 8080
 ### CMD
 You can find more available **image tag** on [dockerhub](https://hub.docker.com/repository/docker/p208p2002/docker-for-ai-dev/tags?page=1)
 #### with GPU and docker 19.03+
