@@ -27,7 +27,7 @@ Dockerfiles for quickly create remote dev env for pytorch & tensorflow
 2. replace `IMAGE` to available image tag:
     - p208p2002/docker-for-ai-dev:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode
     - p208p2002/docker-for-ai-dev:cu10.1-py36-tf2.1.0-torch1.4-jupyter-vscode
-> You can find more available image tag on this [dockerhub](https://hub.docker.com/repository/docker/p208p2002/docker-for-ai-dev/tags?page=1)
+> You can find more available image tag on this [dockerhub](https://hub.docker.com/repository/docker/p208p2002/docker-for-ai-dev/tags)
 3. assign `--name=CONTAINER_NAME` for your container, if needed.
 #### with GPU and docker 19.03+
 ```
