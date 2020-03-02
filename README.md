@@ -23,24 +23,26 @@ Dockerfiles for quickly create remote dev env for pytorch & tensorflow
 
 ### CMD
 1. replace `SSH_PORT`, `JUPYTER_PORT`, `VSCODE_PORT` as the external port number what you want
-2. replace `IMAGE_TAG` to available image tag:
+> follow this format `docker run [OPTIONS] IMAGE` to modify **CMD** 
+2. replace `IMAGE` to available image tag:
     - p208p2002/docker-for-ai-dev:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode
     - p208p2002/docker-for-ai-dev:cu10.1-py36-tf2.1.0-torch1.4-jupyter-vscode
-> You can find more available **image tag** on [dockerhub](https://hub.docker.com/repository/docker/p208p2002/docker-for-ai-dev/tags?page=1)
+> You can find more available image tag on this [dockerhub](https://hub.docker.com/repository/docker/p208p2002/docker-for-ai-dev/tags?page=1)
+3. assign `--name=CONTAINER_NAME` for your container, if needed.
 #### with GPU and docker 19.03+
 ```
-$ docker run --restart=always --gpus all -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 -e"NAME=..." -e"PASSWORD=..." IMAGE_TAG
+$ docker run --restart=always --gpus all -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 -e"NAME=..." -e"PASSWORD=..." IMAGE
 ```
 > require docker 19.03+ & [nvidia-docker](https://github.com/NVIDIA/nvidia-docker)
 
 #### with nvidia-docker
 ```
-$ nvidia-docker run --restart=always -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 -e"NAME=..." -e"PASSWORD=..." IMAGE_TAG
+$ nvidia-docker run --restart=always -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 -e"NAME=..." -e"PASSWORD=..." IMAGE
 ```
 
 #### only CPU
 ```
-$ docker run --restart=always -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 -e"NAME=..." -e"PASSWORD=..." IMAGE_TAG
+$ docker run --restart=always -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 -e"NAME=..." -e"PASSWORD=..." IMAGE
 ```
 
 ## Web VScode Issues
