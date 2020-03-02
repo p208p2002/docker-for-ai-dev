@@ -15,7 +15,7 @@ Dockerfiles for quickly create remote dev env for pytorch & tensorflow
 - cuda support
 
 ## Quick Start
-1. follow this format `docker run [OPTIONS] IMAGE` to modify **CMD**
+1. follow this format `docker run [OPTIONS] IMAGE` to modify the **CMD**
 2.  modify `-e"NAME=..."`,`-e"PASSWORD=..."` **for login your ssh, jupyter and vscode**
 3. replace `SSH_PORT`, `JUPYTER_PORT`, `VSCODE_PORT` as the **external port** number what you want
 4. replace `IMAGE` to available image tag:
