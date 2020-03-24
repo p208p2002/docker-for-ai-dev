@@ -1,11 +1,5 @@
-# Run repeat
-service fail2ban start;
-service ssh start;
-(nohup /code-server2.1698-vsc1.41.1-linux-x86_64/code-server --host 0.0.0.0 /tf 2> /dev/null&);
-(nohup jupyter notebook --allow-root --ip=0.0.0.0 2> /dev/null&);
-
-# Run once, hold otherwise
 if [ -f "already_ran" ]; then
+    # pass
     echo "Already ran the Entrypoint once. Holding indefinitely for debugging.";
 else
     # setting jupyter pwd;
@@ -17,3 +11,9 @@ else
     echo $NAME:$PASSWORD | chpasswd;
 fi
 touch already_ran;
+
+# Run repeat
+service fail2ban start;
+service ssh start;
+(nohup /code-server2.1698-vsc1.41.1-linux-x86_64/code-server --host 0.0.0.0 /home/${NAME} 2> /dev/null&);
+(nohup jupyter notebook --allow-root --ip=0.0.0.0 --notebook-dir=/home/${NAME} 2> /dev/null&);
