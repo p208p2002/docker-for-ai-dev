@@ -19,5 +19,4 @@ c = c  # pylint:disable=undefined-variable
 c.NotebookApp.ip = '*'
 c.NotebookApp.port = int(os.getenv('PORT', 8888))
 c.NotebookApp.open_browser = False
-c.NotebookApp.password = 'sha1:1b7314b1a76c:ac8668b713f33b886cef39ac6f2d1bd3f93b15a9'
-c.NotebookApp.token = ''
+c.NotebookApp.token = os.environ["PASSWORD"]
