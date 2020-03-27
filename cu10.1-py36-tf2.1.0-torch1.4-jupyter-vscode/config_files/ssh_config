@@ -38,7 +38,7 @@ PasswordAuthentication yes
 #   IdentityFile ~/.ssh/id_ecdsa
 #   IdentityFile ~/.ssh/id_ed25519
 Port 22
-ListenAddress 0.0.0.0
+#ListenAddress 0.0.0.0
 #   Protocol 2
 #   Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc
 #   MACs hmac-md5,hmac-sha1,umac-64@openssh.com
