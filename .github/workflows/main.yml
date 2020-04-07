@@ -17,8 +17,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Install and Test
-      run: 
-        git checkout site-src
+      run: |
         npm install
         npm run test
       env:
@@ -36,4 +35,4 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
         FOLDER: build
-        BUILD_SCRIPT: git checkout site-src&&npm install && num run build
+        BUILD_SCRIPT: npm install && num run build
