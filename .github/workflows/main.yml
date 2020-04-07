@@ -18,8 +18,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Install and Test
       run: |
-        yarn
-        yarn test
+        npm install
+        npm run test
       env:
         CI: true
 
@@ -35,4 +35,4 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
         FOLDER: build
-        BUILD_SCRIPT: yarn && yarn build
+        BUILD_SCRIPT: npm install && num run build
