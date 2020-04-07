@@ -47,8 +47,3 @@ $ docker run --restart=always -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE
     2. reopen terminal
 - [can't paste text to terminal](https://github.com/cdr/code-server/issues/1106)
     - try `ctrl+shift+v` or `shift+insert`
-
-## Update Plan
-- file server support
-- update to code server v3
-- git page for quickly create CMD 
