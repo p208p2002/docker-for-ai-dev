@@ -228,7 +228,11 @@ export class App extends Component {
 
         <h4>cmd</h4>
         <div className="form-group">
-          <input type="text" className="form-control" value={
+          <input 
+            type="text" 
+            className="form-control" 
+            onChange={()=>{}}
+            value={
             `${docker} ${options.join(' ')} ${ports.join(' ')} ${sshPort} ${jupyterPort} ${codeServerPort} ${image}`
           } />
         </div>
