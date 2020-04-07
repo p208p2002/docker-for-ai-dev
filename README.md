@@ -1,54 +1,68 @@
-# Docker for AI DEV
-Dockerfiles for quickly create remote dev env for pytorch & tensorflow
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-[GitHub](https://github.com/p208p2002/docker-for-ai-dev)
+## Available Scripts
 
-[DokcerHub](https://hub.docker.com/r/p208p2002/docker-for-ai-dev)
+In the project directory, you can run:
 
-## Feature
-- **jupyter**
-- [**web-vscode** (code server)](https://github.com/cdr/code-server)
-- ssh
-- fail2ban
-- pytorch
-- tensorflow
-- cuda support
+### `npm start`
 
-### CMD
-#### with GPU and docker 19.03+
-```
-$ docker run --restart=always --gpus all -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 -e"NAME=..." -e"PASSWORD=..." IMAGE
-```
-> require docker 19.03+ & [nvidia-docker](https://github.com/NVIDIA/nvidia-docker)
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-#### with nvidia-docker
-```
-$ nvidia-docker run --restart=always -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 -e"NAME=..." -e"PASSWORD=..." IMAGE
-```
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-#### only CPU
-```
-$ docker run --restart=always -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 -e"NAME=..." -e"PASSWORD=..." IMAGE
-```
+### `npm test`
 
-## Quick Start
-1. follow this format `docker run [OPTIONS] IMAGE` to modify the **CMD**
-2.  modify `-e"NAME=..."`,`-e"PASSWORD=..."` **for login your ssh, jupyter and vscode**
-3. replace `SSH_PORT`, `JUPYTER_PORT`, `VSCODE_PORT` to the **external port** number what you want
-4. replace `IMAGE` to available image tag:
-    - p208p2002/docker-for-ai-dev:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode
-    - p208p2002/docker-for-ai-dev:cu10.1-py36-tf2.1.0-torch1.4-jupyter-vscode
-> You can find more available image tag on this [dockerhub](https://hub.docker.com/r/p208p2002/docker-for-ai-dev/tags)
-5. assign `--name=YOUR_CONTAINER_NAME` for your container, if needed.
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Web VScode Issues
-- can't use `tab` in terminal
-    1. at the top right of your terminal window, dropdown and set default shell to `/bin/bash`.
-    2. reopen terminal
-- [can't paste text to terminal](https://github.com/cdr/code-server/issues/1106)
-    - try `ctrl+shift+v` or `shift+insert`
+### `npm run build`
 
-## Update Plan
-- file server support
-- update to code server v3
-- git page for quickly create CMD 
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
