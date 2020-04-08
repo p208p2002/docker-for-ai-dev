@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
+import './TemplateGen.css'
+import Clipboard from 'react-clipboard.js';
 
 export class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      docker: '',
-      image: '',
-      options: [],
+      docker: 'docker run --gpus all',
+      image: 'p208p2002/docker-for-ai-dev:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode',
+      options: ['-itd'],
       ports: [],
       codeServerPort: '-p 8080:8080',
-      jupyterPort: '-p 8080:8080',
+      jupyterPort: '-p 8888:8888',
       sshPort: '-p 22:22',
       portingInputValue: ''
     }
@@ -79,34 +81,35 @@ export class App extends Component {
 
   render() {
     let { docker, image, options, ports, sshPort, jupyterPort, codeServerPort } = this.state
+    let cmd = `${docker} ${options.join(' ')} ${ports.join(' ')} ${sshPort} ${jupyterPort} ${codeServerPort} ${image}`
     return (
-      <div className="container">
-        <h3>Dokcer for ai dev</h3>
-        <h4>docker setting</h4>
-        <div className="select-image">
-          <div className="form-group row">
-            <div className="col col-12">
+      <div id="TemplateGen" className="container">
+        <h3 className="text-center">Dokcer for ai dev</h3>
+        <h4>Docker setting</h4>
+        <div className="docker-setting">
+          <div className="form-group row" style={{marginLeft:0}}>
+            <div>
               <button
-                className="btn btn-sm btn-secondary"
-                id="docker --gpus all"
+                className={`btn btn-sm ${docker === 'docker run --gpus all' ? 'btn-outline-secondary' : 'btn-secondary '}`}
+                id="docker run --gpus all"
                 onClick={this.setDocker}
               >
                 with GPU and docker 19.03+
             </button>
             </div>
-            <div className="col col-12">
+            <div>
               <button
-                className="btn btn-sm btn-secondary"
-                id="nvidia-docker"
+                className={`btn btn-sm ${docker === 'nvidia-docker run' ? 'btn-outline-secondary' : 'btn-secondary '}`}
+                id="nvidia-docker run"
                 onClick={this.setDocker}
               >
                 with nvidia-docker
             </button>
             </div>
-            <div className="col col-12">
+            <div>
               <button
-                className="btn btn-sm btn-secondary"
-                id="docker"
+                className={`btn btn-sm ${docker === 'docker run' ? 'btn-outline-secondary' : 'btn-secondary '}`}
+                id="docker run"
                 onClick={this.setDocker}
               >
                 only cpu
@@ -116,21 +119,21 @@ export class App extends Component {
         </div>
 
 
-        <h4>select image</h4>
+        <h4>Select image</h4>
         <div className="select-image">
           <div className="form-group row">
-            <div className="col col-12">
+            <div className="col-12">
               <button
-                className="btn btn-sm btn-secondary"
+                className={`btn btn-sm ${image === 'p208p2002/docker-for-ai-dev:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode' ? 'btn-outline-secondary' : 'btn-secondary '}`}
                 id="p208p2002/docker-for-ai-dev:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode"
                 onClick={this.setImage}
               >
                 docker-for-ai-dev:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode
             </button>
             </div>
-            <div className="col col-12">
+            <div className="col-12">
               <button
-                className="btn btn-sm btn-secondary"
+                className={`btn btn-sm ${image === 'p208p2002/docker-for-ai-dev:cu10.1-py36-tf2.1.0-torch1.4-jupyter-vscode' ? 'btn-outline-secondary' : 'btn-secondary '}`}
                 id="p208p2002/docker-for-ai-dev:cu10.1-py36-tf2.1.0-torch1.4-jupyter-vscode"
                 onClick={this.setImage}
               >
@@ -140,7 +143,7 @@ export class App extends Component {
           </div>
         </div>
 
-        <h4>container options</h4>
+        <h4>Container options</h4>
         <div className="container-options">
           <div className="form-group">
             <div className="form-group form-check">
@@ -148,6 +151,7 @@ export class App extends Component {
                 type="checkbox"
                 className="form-check-input"
                 id="-itd"
+                defaultChecked={true}
                 onChange={this.setOptions}
               />
               <label className="form-check-label">-itd</label>
@@ -164,11 +168,12 @@ export class App extends Component {
           </div>
         </div>
 
-        <h4>service port</h4>
+        <h4>Service port</h4>
         <div className="func-port">
           <div className="form-group">
             <p>code server(web vscode)
               <input
+                defaultValue={8080}
                 type="text"
                 className="form-control"
                 onChange={(e) => {
@@ -179,6 +184,7 @@ export class App extends Component {
               /></p>
             <p>jupyter
               <input
+                defaultValue={8888}
                 type="text"
                 className="form-control"
                 onChange={(e) => {
@@ -189,6 +195,7 @@ export class App extends Component {
               /></p>
             <p>ssh
               <input
+                defaultValue={22}
                 type="text"
                 className="form-control"
                 onChange={(e) => {
@@ -200,41 +207,50 @@ export class App extends Component {
           </div>
         </div>
 
-        <h4>porting</h4>
+        <h4>Porting</h4>
         <div className="porting">
-          <div className="form-group">
-            <input
-              ref={this.portingInput}
-              value={this.state.portingInputValue}
-              onChange={(e) => {
-                this.setState({
-                  portingInputValue: e.target.value
-                })
-              }}
-              type="text"
-              placeholder="EXTERNAL_PORT:INTERNAL_PORT"
-              className="form-control" />
-            <ul>
-              {ports.map((port, i) => {
-                return <li key={i}>{port} <span onClick={() => this.rmPort(port)} className="btn btn-sm btn-danger">x</span></li>
-              })}
-            </ul>
-            <div
-              className="btn btn-primary"
-              onClick={this.addPort}
-            >ADD</div>
+          <div className="form row">
+            <div className="form-group col-10 col-md-6">
+              <input
+                ref={this.portingInput}
+                value={this.state.portingInputValue}
+                onChange={(e) => {
+                  this.setState({
+                    portingInputValue: e.target.value
+                  })
+                }}
+                type="text"
+                placeholder="EXTERNAL_PORT:INTERNAL_PORT"
+                className="form-control" />
+              <ul>
+                {ports.map((port, i) => {
+                  return <li key={i}>{port} <span onClick={() => this.rmPort(port)} className="btn btn-sm btn-danger">x</span></li>
+                })}
+              </ul>
+            </div>
+            <div className="form-group col-2">
+              <div
+                className="btn btn btn-primary w-100 "
+                onClick={this.addPort}
+              >add porting</div>
+            </div>
           </div>
         </div>
 
-        <h4>cmd</h4>
-        <div className="form-group">
-          <input 
-            type="text" 
-            className="form-control" 
-            onChange={()=>{}}
-            value={
-            `${docker} ${options.join(' ')} ${ports.join(' ')} ${sshPort} ${jupyterPort} ${codeServerPort} ${image}`
-          } />
+        <h4>Docker run</h4>
+        <div className="form row">
+          <div className="form-group col-10 col-md-6">
+            <input
+              type="text"
+              className="form-control"
+              onChange={() => { }}
+              value={cmd} />
+          </div>
+          <div className="form-group col-2">
+            <Clipboard className="btn btn btn-success w-100" data-clipboard-text={cmd}>
+              copy to clipboard
+          </Clipboard>
+          </div>
         </div>
       </div>
     )

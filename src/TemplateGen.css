@@ -1,0 +1,21 @@
+#TemplateGen .btn-outline-secondary:hover{
+    background-color: white;
+    color: #6c757d;
+}
+
+#TemplateGen .docker-setting button{
+    margin-right: 3px;
+}
+
+#TemplateGen .select-image button{
+    margin-bottom: 3px;
+}
+
+#TemplateGen .porting input,
+#TemplateGen .func-port input{
+    max-width: 300px;
+}
+
+#TemplateGen .porting .form-group{
+    max-width: 330px;
+}
