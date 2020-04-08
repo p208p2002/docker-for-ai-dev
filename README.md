@@ -32,7 +32,7 @@ $ nvidia-docker run --restart=always -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p
 $ docker run --restart=always -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 -e"NAME=..." -e"PASSWORD=..." IMAGE
 ```
 
-## Quick Start
+## Usage
 choose one: CMD Generator or Manual Setting
 
 ### CMD Generator 
