@@ -13,7 +13,9 @@ export class App extends Component {
       codeServerPort: '-p 8080:8080',
       jupyterPort: '-p 8888:8888',
       sshPort: '-p 22:22',
-      portingInputValue: ''
+      portingInputValue: '',
+      name:'',
+      password:''
     }
 
     this.portingInput = React.createRef()
@@ -80,8 +82,8 @@ export class App extends Component {
   }
 
   render() {
-    let { docker, image, options, ports, sshPort, jupyterPort, codeServerPort } = this.state
-    let cmd = `${docker} ${options.join(' ')} ${ports.join(' ')} ${sshPort} ${jupyterPort} ${codeServerPort} ${image}`
+    let { docker, image, options, ports, sshPort, jupyterPort, codeServerPort, name, password } = this.state
+    let cmd = `${docker} ${options.join(' ')} ${ports.join(' ')} ${sshPort} ${jupyterPort} ${codeServerPort} ${name} ${password} ${image}`
     return (
       <div id="TemplateGen" className="container">
         <h3 className="text-center">Dokcer for ai dev</h3>
@@ -165,6 +167,35 @@ export class App extends Component {
               />
               <label className="form-check-label">--restart=always</label>
             </div>
+          </div>
+        </div>
+
+        <h4>User account</h4>
+        <small>this setting is for login the service, and will not be record by anyone</small>
+        <br/>
+        <small>you can check my source code on <a href="https://github.com/p208p2002/docker-for-ai-dev/tree/site-src">github</a></small>
+        <div className="user-account">
+          <div className="form-group">
+            <p>User name
+              <input                
+                type="text"
+                className="form-control"
+                onChange={(e) => {
+                  this.setState({
+                    name: `-e"NAME"=${e.target.value}`
+                  })
+                }}
+              /></p>
+            <p>Password
+              <input
+                type="text"
+                className="form-control"
+                onChange={(e) => {
+                  this.setState({
+                    password: `-e"PASSWORD"=${e.target.value}`
+                  })
+                }}
+              /></p>            
           </div>
         </div>
 

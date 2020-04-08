@@ -11,6 +11,7 @@
     margin-bottom: 3px;
 }
 
+#TemplateGen .user-account input,
 #TemplateGen .porting input,
 #TemplateGen .func-port input{
     max-width: 300px;
