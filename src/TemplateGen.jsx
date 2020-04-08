@@ -86,7 +86,7 @@ export class App extends Component {
     let cmd = `${docker} ${options.join(' ')} ${ports.join(' ')} ${sshPort} ${jupyterPort} ${codeServerPort} ${name} ${password} ${image}`
     return (
       <div id="TemplateGen" className="container">
-        <h3 className="text-center">Dokcer for ai dev</h3>
+        <h3 className="text-center">Dokcer for AI DEV</h3>
         <h4>Docker setting</h4>
         <div className="docker-setting">
           <div className="form-group row" style={{ marginLeft: 0 }}>
