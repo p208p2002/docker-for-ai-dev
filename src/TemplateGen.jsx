@@ -14,8 +14,8 @@ export class App extends Component {
       jupyterPort: '-p 8888:8888',
       sshPort: '-p 22:22',
       portingInputValue: '',
-      name:'',
-      password:''
+      name: '',
+      password: ''
     }
 
     this.portingInput = React.createRef()
@@ -89,7 +89,7 @@ export class App extends Component {
         <h3 className="text-center">Dokcer for ai dev</h3>
         <h4>Docker setting</h4>
         <div className="docker-setting">
-          <div className="form-group row" style={{marginLeft:0}}>
+          <div className="form-group row" style={{ marginLeft: 0 }}>
             <div>
               <button
                 className={`btn btn-sm ${docker === 'docker run --gpus all' ? 'btn-outline-secondary' : 'btn-secondary '}`}
@@ -172,12 +172,12 @@ export class App extends Component {
 
         <h4>User account</h4>
         <small>this setting is for login the service, and will not be record by anyone</small>
-        <br/>
+        <br />
         <small>you can check my source code on <a href="https://github.com/p208p2002/docker-for-ai-dev/tree/site-src">github</a></small>
         <div className="user-account">
           <div className="form-group">
             <p>User name
-              <input                
+              <input
                 type="text"
                 className="form-control"
                 onChange={(e) => {
@@ -195,7 +195,7 @@ export class App extends Component {
                     password: `-e"PASSWORD"=${e.target.value}`
                   })
                 }}
-              /></p>            
+              /></p>
           </div>
         </div>
 
@@ -278,9 +278,17 @@ export class App extends Component {
               value={cmd} />
           </div>
           <div className="form-group col-2">
-            <Clipboard className="btn btn btn-success w-100" data-clipboard-text={cmd}>
+            <Clipboard 
+              onClick={()=>{
+                if(password ==='' || name ===''){
+                  alert('require Username and Password')
+                }                
+              }}
+              className="btn btn btn-success w-100" 
+              data-clipboard-text={cmd}
+            >
               copy to clipboard
-          </Clipboard>
+            </Clipboard>
           </div>
         </div>
       </div>
