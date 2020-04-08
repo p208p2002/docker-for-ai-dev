@@ -15,6 +15,7 @@ Dockerfiles for quickly create remote dev env for pytorch & tensorflow
 - cuda support
 
 ### CMD
+
 #### with GPU and docker 19.03+
 ```
 $ docker run --restart=always --gpus all -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 -e"NAME=..." -e"PASSWORD=..." IMAGE
@@ -33,9 +34,11 @@ $ docker run --restart=always -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE
 
 ## Quick Start
 choose one: CMD Generator or Manual Setting
+
 ### CMD Generator 
 ![Build and Deploy](https://github.com/p208p2002/docker-for-ai-dev/workflows/Build%20and%20Deploy/badge.svg?branch=site-src)
 - [https://p208p2002.github.io/docker-for-ai-dev](https://p208p2002.github.io/docker-for-ai-dev)
+
 ### Manual Setting
 1. follow this format `docker run [OPTIONS] IMAGE` to modify the **CMD**
 2.  modify `-e"NAME=..."`,`-e"PASSWORD=..."` **for login your ssh, jupyter and vscode**
