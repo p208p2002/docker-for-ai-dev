@@ -182,7 +182,7 @@ export class App extends Component {
                 className="form-control"
                 onChange={(e) => {
                   this.setState({
-                    name: `-e"NAME"=${e.target.value}`
+                    name: `--name=${e.target.value} -e"NAME"=${e.target.value}`
                   })
                 }}
               /></p>
