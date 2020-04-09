@@ -8,7 +8,7 @@ on:
 
 jobs:
 
-  build-cu10.0:
+  build_cu10.0:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,7 +16,7 @@ jobs:
     - name: Build the Docker image
       run: docker build -t=cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode/
   
-  build-cu10.1:
+  build_cu10.1:
     runs-on: ubuntu-latest
     
     steps:
