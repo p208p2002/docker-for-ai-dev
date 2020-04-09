@@ -15,7 +15,7 @@ jobs:
     - name: Build
       run: docker build -t=p208p2002/docker-for-ai-dev-test:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode/
     - name: Push    
-    - uses: elgohr/Publish-Docker-Github-Action@master
+      uses: elgohr/Publish-Docker-Github-Action@master
       with:
           name: p208p2002/docker-for-ai-dev-test:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode
           username: p208p2002
