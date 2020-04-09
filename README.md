@@ -1,5 +1,5 @@
 # Docker for AI DEV
-![Docker Image CI](https://github.com/p208p2002/docker-for-ai-dev/workflows/Docker%20Image%20CI/badge.svg?branch=master)
+![Build and Publish](https://github.com/p208p2002/docker-for-ai-dev/workflows/Build%20and%20Publish/badge.svg)
 
 Dockerfiles for quickly create remote dev env for pytorch & tensorflow
 
