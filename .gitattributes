@@ -1,4 +1,5 @@
-*.sh=lf
-*.py=lf
-*.conf=lf
-ssh_config=lf
+* text=auto
+*.sh eol=lf
+*.py eol=lf=lf
+*.conf eol=lf=lf
+ssh_config eol=lf=lf

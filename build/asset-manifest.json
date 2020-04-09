@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/docker-for-ai-dev/static/css/main.3d724fb9.chunk.css",
+    "main.js": "/docker-for-ai-dev/static/js/main.b2c6b5a3.chunk.js",
+    "main.js.map": "/docker-for-ai-dev/static/js/main.b2c6b5a3.chunk.js.map",
+    "runtime-main.js": "/docker-for-ai-dev/static/js/runtime-main.801fcd5c.js",
+    "runtime-main.js.map": "/docker-for-ai-dev/static/js/runtime-main.801fcd5c.js.map",
+    "static/js/2.4fdb24d1.chunk.js": "/docker-for-ai-dev/static/js/2.4fdb24d1.chunk.js",
+    "static/js/2.4fdb24d1.chunk.js.map": "/docker-for-ai-dev/static/js/2.4fdb24d1.chunk.js.map",
+    "index.html": "/docker-for-ai-dev/index.html",
+    "precache-manifest.e4b10de1bd56eb313a0035c64727599c.js": "/docker-for-ai-dev/precache-manifest.e4b10de1bd56eb313a0035c64727599c.js",
+    "service-worker.js": "/docker-for-ai-dev/service-worker.js",
+    "static/css/main.3d724fb9.chunk.css.map": "/docker-for-ai-dev/static/css/main.3d724fb9.chunk.css.map",
+    "static/js/2.4fdb24d1.chunk.js.LICENSE.txt": "/docker-for-ai-dev/static/js/2.4fdb24d1.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.801fcd5c.js",
+    "static/js/2.4fdb24d1.chunk.js",
+    "static/css/main.3d724fb9.chunk.css",
+    "static/js/main.b2c6b5a3.chunk.js"
+  ]
+}
