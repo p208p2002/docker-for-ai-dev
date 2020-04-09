@@ -36,7 +36,8 @@ $ docker run --restart=always -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE
 ## Usage
 choose one: CMD Generator or Manual Setting
 
-### CMD Generator ![Build and Deploy](https://github.com/p208p2002/docker-for-ai-dev/workflows/Build%20and%20Deploy/badge.svg?branch=site-src)
+### CMD Generator 
+![Build and Deploy](https://github.com/p208p2002/docker-for-ai-dev/workflows/Build%20and%20Deploy/badge.svg?branch=site-src)
 - [https://p208p2002.github.io/docker-for-ai-dev](https://p208p2002.github.io/docker-for-ai-dev)
 
 ### Manual Setting
