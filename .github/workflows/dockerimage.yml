@@ -10,16 +10,25 @@ jobs:
 
   build_cu100:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
+    - name: Build cu100
       run: docker build -t=cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode/
   
   build_cu101:
     runs-on: ubuntu-latest
-    
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
+    - name: Build cu101
       run: docker build -t=cu10.1-py36-tf2.1.0-torch1.4-jupyter-vscode cu10.1-py36-tf2.1.0-torch1.4-jupyter-vscode/
+  
+  Docker_Publish:
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: manusa/actions-publish-docker@v1.0.1
+        with:
+          name: p208p2002/docker-for-ai-dev-test:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode
+          tag: p208p2002/docker-for-ai-dev-test:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode
+          username: p208p2002
+          password: ${{ secrets.DOCKER_HUB_PWD }}
