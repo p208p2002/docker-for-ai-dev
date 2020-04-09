@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-    - run: docker build -t=cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode/
+      run: docker build -t=cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode/
   
   build-cu10.1:
     runs-on: ubuntu-latest
@@ -22,4 +22,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-    - run: docker build -t=cu10.1-py36-tf2.1.0-torch1.4-jupyter-vscode cu10.1-py36-tf2.1.0-torch1.4-jupyter-vscode/
+      run: docker build -t=cu10.1-py36-tf2.1.0-torch1.4-jupyter-vscode cu10.1-py36-tf2.1.0-torch1.4-jupyter-vscode/
