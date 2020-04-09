@@ -49,8 +49,9 @@ RUN echo 'export LC_ALL="zh_TW.UTF-8"' >> /etc/bash.bashrc
 RUN update-locale LANG=zh_TW.UTF-8
 
 # vscode-server
-ADD code-server2.1698-vsc1.41.1-linux-x86_64.tar.gz /
-RUN chmod 777 /code-server2.1698-vsc1.41.1-linux-x86_64/code-server
+ADD code-server-3.0.2-linux-x86_64.tar.gz /
+RUN mv /code-server-3.0.2-linux-x86_64 /code-server
+RUN chmod -R 775 /code-server
 
 #
 EXPOSE 22
