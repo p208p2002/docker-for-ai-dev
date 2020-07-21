@@ -92,7 +92,7 @@ export class App extends Component {
           <div className="form-group row" style={{ marginLeft: 0 }}>
             <div>
               <button
-                className={`btn btn-sm ${docker === 'docker run --gpus all' ? 'btn-outline-secondary' : 'btn-secondary '}`}
+                className={`btn btn-sm ${docker === 'docker run --gpus all' ? 'btn-secondary active' : 'btn-secondary '}`}
                 id="docker run --gpus all"
                 onClick={this.setDocker}
               >
@@ -101,7 +101,7 @@ export class App extends Component {
             </div>
             <div>
               <button
-                className={`btn btn-sm ${docker === 'nvidia-docker run' ? 'btn-outline-secondary' : 'btn-secondary '}`}
+                className={`btn btn-sm ${docker === 'nvidia-docker run' ? 'btn-secondary active' : 'btn-secondary '}`}
                 id="nvidia-docker run"
                 onClick={this.setDocker}
               >
@@ -110,7 +110,7 @@ export class App extends Component {
             </div>
             <div>
               <button
-                className={`btn btn-sm ${docker === 'docker run' ? 'btn-outline-secondary' : 'btn-secondary '}`}
+                className={`btn btn-sm ${docker === 'docker run' ? 'btn-secondary active' : 'btn-secondary '}`}
                 id="docker run"
                 onClick={this.setDocker}
               >
@@ -126,7 +126,7 @@ export class App extends Component {
           <div className="form-group row">
             <div className="col-12">
               <button
-                className={`btn btn-sm ${image === 'p208p2002/docker-for-ai-dev:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode' ? 'btn-outline-secondary' : 'btn-secondary '}`}
+                className={`btn btn-sm ${image === 'p208p2002/docker-for-ai-dev:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode' ? 'btn-secondary active' : 'btn-secondary '}`}
                 id="p208p2002/docker-for-ai-dev:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode"
                 onClick={this.setImage}
               >
@@ -135,7 +135,7 @@ export class App extends Component {
             </div>
             <div className="col-12">
               <button
-                className={`btn btn-sm ${image === 'p208p2002/docker-for-ai-dev:cu10.1-py36-tf2.1.0-torch1.4-jupyter-vscode' ? 'btn-outline-secondary' : 'btn-secondary '}`}
+                className={`btn btn-sm ${image === 'p208p2002/docker-for-ai-dev:cu10.1-py36-tf2.1.0-torch1.4-jupyter-vscode' ? 'btn-secondary active' : 'btn-secondary '}`}
                 id="p208p2002/docker-for-ai-dev:cu10.1-py36-tf2.1.0-torch1.4-jupyter-vscode"
                 onClick={this.setImage}
               >
