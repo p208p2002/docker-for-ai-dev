@@ -15,7 +15,7 @@ function ImageBtn(props) {
       id={props.imageTag}
       onClick={props.onClick}
     >
-      docker-for-ai-dev:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode
+      {props.imageTag}
     </button>
   )
 }
