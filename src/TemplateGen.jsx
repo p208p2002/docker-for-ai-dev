@@ -2,12 +2,29 @@ import React, { Component } from 'react'
 import './TemplateGen.css'
 import Clipboard from 'react-clipboard.js';
 
+const imageTags = [
+  'p208p2002/docker-for-ai-dev:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode',
+  'p208p2002/docker-for-ai-dev:cu10.1-py36-tf2.1.0-torch1.4-jupyter-vscode'
+]
+
+function ImageBtn(props) {
+  return (
+    <button
+      className={`btn btn-sm ${props.currentSelectImageTag === props.imageTag ? 'btn-secondary active' : 'btn-secondary '}`}
+      id={props.imageTag}
+      onClick={props.onClick}
+    >
+      docker-for-ai-dev:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode
+    </button>
+  )
+}
+
 export class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
       docker: 'docker run --gpus all',
-      image: 'p208p2002/docker-for-ai-dev:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode',
+      image: imageTags[0],
       options: ['-itd'],
       ports: [],
       codeServerPort: '-p 8080:8080',
@@ -124,24 +141,14 @@ export class App extends Component {
         <h4>Select image</h4>
         <div className="select-image">
           <div className="form-group row">
-            <div className="col-12">
-              <button
-                className={`btn btn-sm ${image === 'p208p2002/docker-for-ai-dev:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode' ? 'btn-secondary active' : 'btn-secondary '}`}
-                id="p208p2002/docker-for-ai-dev:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode"
-                onClick={this.setImage}
-              >
-                docker-for-ai-dev:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode
-            </button>
-            </div>
-            <div className="col-12">
-              <button
-                className={`btn btn-sm ${image === 'p208p2002/docker-for-ai-dev:cu10.1-py36-tf2.1.0-torch1.4-jupyter-vscode' ? 'btn-secondary active' : 'btn-secondary '}`}
-                id="p208p2002/docker-for-ai-dev:cu10.1-py36-tf2.1.0-torch1.4-jupyter-vscode"
-                onClick={this.setImage}
-              >
-                docker-for-ai-dev:cu10.1-py36-tf2.1.0-torch1.4-jupyter-vscode
-            </button>
-            </div>
+            {imageTags.map((tag, i) => {
+              return <div key={i} className="col-12">
+                <ImageBtn
+                  imageTag={tag}
+                  currentSelectImageTag={image}
+                  onClick={this.setImage} />
+              </div>
+            })}
           </div>
         </div>
 
@@ -278,13 +285,13 @@ export class App extends Component {
               value={cmd} />
           </div>
           <div className="form-group col-2">
-            <Clipboard 
-              onClick={()=>{
-                if(password ==='' || name ===''){
+            <Clipboard
+              onClick={() => {
+                if (password === '' || name === '') {
                   alert('require Username and Password')
-                }                
+                }
               }}
-              className="btn btn btn-success w-100" 
+              className="btn btn btn-success w-100"
               data-clipboard-text={cmd}
             >
               copy to clipboard
