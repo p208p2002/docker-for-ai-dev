@@ -4,7 +4,8 @@ import Clipboard from 'react-clipboard.js';
 
 const imageTags = [
   'p208p2002/docker-for-ai-dev:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode',
-  'p208p2002/docker-for-ai-dev:cu10.1-py36-tf2.1.0-torch1.4-jupyter-vscode'
+  'p208p2002/docker-for-ai-dev:cu10.1-py36-tf2.1.0-torch1.4-jupyter-vscode',
+  'p208p2002/docker-for-ai-dev:cu10.1-py36-tf2.3.0-torch1.6.0-jupyter-vscode'
 ]
 
 function ImageBtn(props) {
