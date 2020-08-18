@@ -2,8 +2,6 @@
 
 Dockerfiles for quickly create remote dev env for pytorch & tensorflow
 
-![Demo Animation](../assets/demo.gif?raw=true)
-
 [GitHub](https://github.com/p208p2002/docker-for-ai-dev)
 
 [DokcerHub](https://hub.docker.com/r/p208p2002/docker-for-ai-dev)
@@ -17,23 +15,8 @@ Dockerfiles for quickly create remote dev env for pytorch & tensorflow
 - tensorflow
 - cuda support
 
-### CMD
-
-#### with GPU and docker 19.03+
-```
-$ docker run --restart=always --gpus all -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 -e"NAME=..." -e"PASSWORD=..." IMAGE
-```
-> require docker 19.03+ & [nvidia-docker](https://github.com/NVIDIA/nvidia-docker)
-
-#### with nvidia-docker
-```
-$ nvidia-docker run --restart=always -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 -e"NAME=..." -e"PASSWORD=..." IMAGE
-```
-
-#### only CPU
-```
-$ docker run --restart=always -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 -e"NAME=..." -e"PASSWORD=..." IMAGE
-```
+## Demo
+![Demo Animation](../assets/demo.gif?raw=true)
 
 ## Usage
 choose one: CMD Generator or Manual Setting
@@ -51,6 +34,21 @@ choose one: CMD Generator or Manual Setting
     - p208p2002/docker-for-ai-dev:cu10.1-py36-tf2.1.0-torch1.4-jupyter-vscode
 > You can find more available image tag on this [dockerhub](https://hub.docker.com/r/p208p2002/docker-for-ai-dev/tags)
 5. assign `--name=YOUR_CONTAINER_NAME` for your container, if needed.
+
+#### CMD
+##### with GPU and docker 19.03+
+```
+$ docker run --restart=always --gpus all -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 -e"NAME=..." -e"PASSWORD=..." IMAGE
+```
+> require docker 19.03+ & [nvidia-docker](https://github.com/NVIDIA/nvidia-docker)
+##### with nvidia-docker
+```
+$ nvidia-docker run --restart=always -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 -e"NAME=..." -e"PASSWORD=..." IMAGE
+```
+##### only CPU
+```
+$ docker run --restart=always -itd -p SSH_PORT:22 -p JUPYTER_PORT:8888 -p VSCODE_PORT:8080 -e"NAME=..." -e"PASSWORD=..." IMAGE
+```
 
 ## Web VScode Issues
 - can't use `tab` in terminal
