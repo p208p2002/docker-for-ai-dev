@@ -2,6 +2,8 @@
 
 Dockerfiles for quickly create remote dev env for pytorch & tensorflow
 
+![Demo Animation](../assets/demo.gif?raw=true)
+
 [GitHub](https://github.com/p208p2002/docker-for-ai-dev)
 
 [DokcerHub](https://hub.docker.com/r/p208p2002/docker-for-ai-dev)
