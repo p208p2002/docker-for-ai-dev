@@ -33,7 +33,8 @@ export class App extends Component {
       sshPorting: '-p 22:22',
       portingInputValue: '',
       name: '',
-      password: ''
+      password: '',
+      create_volume:true
     }
 
     this.portingInput = React.createRef()
@@ -100,8 +101,19 @@ export class App extends Component {
   }
 
   render() {
-    let { docker, image, options, ports, sshPorting, jupyterPorting, codeServerPorting, name, password } = this.state
-    let cmd = `${docker} ${options.join(' ')} ${ports.join(' ')} ${sshPorting} ${jupyterPorting} ${codeServerPorting} ${name} ${password} ${image}`
+    let { docker, image, options, ports, sshPorting, jupyterPorting, codeServerPorting, name, _name='', password, create_volume=true } = this.state
+    let cmd = undefined
+    let createVolumeCMD = undefined
+    let mountVolumeCMD = undefined
+    if(create_volume === true){
+      createVolumeCMD = `docker volume create ${_name}`
+      mountVolumeCMD = `-v ${_name}:/root/${_name} -v ${_name}:/home/${_name}`
+      cmd = `${createVolumeCMD} && ${docker} ${mountVolumeCMD} ${options.join(' ')} ${ports.join(' ')} ${sshPorting} ${jupyterPorting} ${codeServerPorting} ${name} ${password} ${image}`
+    }
+    else{
+      cmd = `${docker} ${options.join(' ')} ${ports.join(' ')} ${sshPorting} ${jupyterPorting} ${codeServerPorting} ${name} ${password} ${image}`
+    }
+    
     return (
       <div id="TemplateGen" className="container">
         <h3 className="text-center">Dokcer for AI DEV</h3>
@@ -156,6 +168,21 @@ export class App extends Component {
         <h4>Container options</h4>
         <div className="container-options">
           <div className="form-group">
+          <div className="form-group form-check">
+              <input
+                type="checkbox"
+                className="form-check-input"
+                id="create_volume"
+                defaultChecked={true}
+                onChange={()=>{
+                  this.setState({
+                    create_volume:!this.state.create_volume
+                  })
+                }}
+              />
+              <label className="form-check-label">create_volume</label>
+            </div>
+
             <div className="form-group form-check">
               <input
                 type="checkbox"
@@ -166,6 +193,7 @@ export class App extends Component {
               />
               <label className="form-check-label">-itd</label>
             </div>
+
             <div className="form-group form-check">
               <input
                 type="checkbox"
@@ -190,7 +218,8 @@ export class App extends Component {
                 className="form-control"
                 onChange={(e) => {
                   this.setState({
-                    name: `--name=${e.target.value} -e"NAME"=${e.target.value}`
+                    name: `--name=${e.target.value} -e"NAME"=${e.target.value}`,
+                    _name:e.target.value
                   })
                 }}
               /></p>
