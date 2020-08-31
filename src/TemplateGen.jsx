@@ -28,9 +28,9 @@ export class App extends Component {
       image: imageTags[0],
       options: ['-itd'],
       ports: [],
-      codeServerPort: '-p 8080:8080',
-      jupyterPort: '-p 8888:8888',
-      sshPort: '-p 22:22',
+      codeServerPorting: '-p 8080:8080',
+      jupyterPorting: '-p 8888:8888',
+      sshPorting: '-p 22:22',
       portingInputValue: '',
       name: '',
       password: ''
@@ -100,8 +100,8 @@ export class App extends Component {
   }
 
   render() {
-    let { docker, image, options, ports, sshPort, jupyterPort, codeServerPort, name, password } = this.state
-    let cmd = `${docker} ${options.join(' ')} ${ports.join(' ')} ${sshPort} ${jupyterPort} ${codeServerPort} ${name} ${password} ${image}`
+    let { docker, image, options, ports, sshPorting, jupyterPorting, codeServerPorting, name, password } = this.state
+    let cmd = `${docker} ${options.join(' ')} ${ports.join(' ')} ${sshPorting} ${jupyterPorting} ${codeServerPorting} ${name} ${password} ${image}`
     return (
       <div id="TemplateGen" className="container">
         <h3 className="text-center">Dokcer for AI DEV</h3>
@@ -217,7 +217,7 @@ export class App extends Component {
                 className="form-control"
                 onChange={(e) => {
                   this.setState({
-                    codeServerPort: `-p ${e.target.value}:8080`
+                    codeServerPorting: `-p ${e.target.value}:8080`
                   })
                 }}
               /></p>
@@ -228,7 +228,7 @@ export class App extends Component {
                 className="form-control"
                 onChange={(e) => {
                   this.setState({
-                    jupyterPort: `-p ${e.target.value}:8888`
+                    jupyterPorting: `-p ${e.target.value}:8888`
                   })
                 }}
               /></p>
@@ -239,7 +239,7 @@ export class App extends Component {
                 className="form-control"
                 onChange={(e) => {
                   this.setState({
-                    sshPort: `-p ${e.target.value}:22`
+                    sshPorting: `-p ${e.target.value}:22`
                   })
                 }}
               /></p>
