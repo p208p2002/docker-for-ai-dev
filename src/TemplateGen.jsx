@@ -34,7 +34,7 @@ export class App extends Component {
       portingInputValue: '',
       name: '',
       password: '',
-      create_volume:true
+      create_volume:false
     }
 
     this.portingInput = React.createRef()
