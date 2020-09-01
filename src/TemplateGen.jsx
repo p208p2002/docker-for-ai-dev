@@ -173,7 +173,7 @@ export class App extends Component {
                 type="checkbox"
                 className="form-check-input"
                 id="create_volume"
-                defaultChecked={true}
+                defaultChecked={false}
                 onChange={()=>{
                   this.setState({
                     create_volume:!this.state.create_volume
