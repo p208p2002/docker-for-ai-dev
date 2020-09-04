@@ -168,7 +168,7 @@ export class App extends Component {
         <h4>Container options</h4>
         <div className="container-options">
           <div className="form-group">
-          {/* <div className="form-group form-check">
+          <div className="form-group form-check">
               <input
                 type="checkbox"
                 className="form-check-input"
@@ -181,7 +181,7 @@ export class App extends Component {
                 }}
               />
               <label className="form-check-label">create_volume</label>
-            </div> */}
+            </div>
 
             <div className="form-group form-check">
               <input
