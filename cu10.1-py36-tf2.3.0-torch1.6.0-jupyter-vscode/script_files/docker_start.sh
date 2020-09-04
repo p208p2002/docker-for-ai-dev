@@ -7,7 +7,7 @@ else
     sudo adduser $NAME sudo;
     echo $NAME:$PASSWORD | chpasswd;
     # change volume owner for access promise
-    (chown -R $NAME:$NAME /home/$NAME/$NAME 2> /dev/null&);
+    (chown -R $NAME:$NAME /home/$NAME/user_data 2> /dev/null&);
 fi
 touch already_ran;
 
