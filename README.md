@@ -17,8 +17,8 @@ Dockerfiles for quickly create remote dev env for pytorch & tensorflow
 ## Demo
 ![Demo Animation](../assets/demo.gif?raw=true)
 
-## Usage with CMD Generator 
-![Build and Deploy](https://github.com/p208p2002/docker-for-ai-dev/workflows/Build%20and%20Deploy/badge.svg?branch=site-src)
+## Use 
+### CMD Generator ![Build and Deploy](https://github.com/p208p2002/docker-for-ai-dev/workflows/Build%20and%20Deploy/badge.svg?branch=site-src)
 - [https://p208p2002.github.io/docker-for-ai-dev](https://p208p2002.github.io/docker-for-ai-dev)
 
 ## Web VScode Issues
