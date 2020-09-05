@@ -29,9 +29,7 @@ COPY script_files/docker_start.sh /docker_start.sh
 RUN chmod 777 /docker_start.sh
 
 # pytorch
-RUN wget https://download.pytorch.org/whl/cu100/torch-1.3.0%2Bcu100-cp36-cp36m-linux_x86_64.whl
-RUN pip install torch-1.3.0+cu100-cp36-cp36m-linux_x86_64.whl
-RUN rm torch-1.3.0+cu100-cp36-cp36m-linux_x86_64.whl
+RUN pip install https://download.pytorch.org/whl/cu100/torch-1.3.0%2Bcu100-cp36-cp36m-linux_x86_64.whl
 
 # jupyter
 COPY config_files/jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
@@ -42,16 +40,18 @@ RUN touch /etc/bash.bashrc
 
 # utf-8 zh_TW
 RUN apt-get install -y locales
-RUN locale-gen zh_TW.UTF-8
-RUN echo 'export LANGUAGE="zh_TW.UTF-8"' >> /etc/bash.bashrc
-RUN echo 'export LANG="zh_TW.UTF-8"' >> /etc/bash.bashrc
-RUN echo 'export LC_ALL="zh_TW.UTF-8"' >> /etc/bash.bashrc
-RUN update-locale LANG=zh_TW.UTF-8
+RUN locale-gen en_US.utf8
+RUN echo 'export LANGUAGE="en_US.utf8"' >> /etc/bash.bashrc
+RUN echo 'export LANG="en_US.utf8"' >> /etc/bash.bashrc
+RUN echo 'export LC_ALL="en_US.utf8"' >> /etc/bash.bashrc
+RUN update-locale LANG=en_US.utf8
+
+# nodejs
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+RUN sudo apt install nodejs
 
 # vscode-server
-ADD code-server-3.0.2-linux-x86_64.tar.gz /
-RUN mv /code-server-3.0.2-linux-x86_64 /code-server
-RUN chmod -R 775 /code-server
+RUN npm install -g yarn&&yarn global add code-server
 
 #
 EXPOSE 22
