@@ -4,7 +4,6 @@ import Clipboard from 'react-clipboard.js';
 
 const imageTags = [
   'p208p2002/docker-for-ai-dev:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode',
-  'p208p2002/docker-for-ai-dev:cu10.1-py36-tf2.1.0-torch1.4-jupyter-vscode',
   'p208p2002/docker-for-ai-dev:cu10.1-py36-tf2.3.0-torch1.6.0-jupyter-vscode'
 ]
 
@@ -34,7 +33,7 @@ export class App extends Component {
       portingInputValue: '',
       name: '',
       password: '',
-      create_volume:false
+      create_volume:true
     }
 
     this.portingInput = React.createRef()
@@ -107,7 +106,8 @@ export class App extends Component {
     let mountVolumeCMD = undefined
     if(create_volume === true){
       createVolumeCMD = `docker volume create ${_name}`
-      mountVolumeCMD = `-v ${_name}:/root/${_name} -v ${_name}:/home/${_name}`
+      // mountVolumeCMD = `-v ${_name}:/root/user_data -v ${_name}:/home/${_name}/user_data`
+      mountVolumeCMD = `-v ${_name}:/user_data`
       cmd = `${createVolumeCMD} && ${docker} ${mountVolumeCMD} ${options.join(' ')} ${ports.join(' ')} ${sshPorting} ${jupyterPorting} ${codeServerPorting} ${name} ${password} ${image}`
     }
     else{
@@ -173,7 +173,7 @@ export class App extends Component {
                 type="checkbox"
                 className="form-check-input"
                 id="create_volume"
-                defaultChecked={false}
+                defaultChecked={true}
                 onChange={()=>{
                   this.setState({
                     create_volume:!this.state.create_volume
