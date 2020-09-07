@@ -10,6 +10,7 @@ else
     if [ -d "/user_data" ]; then 
         # volume exists" 
         chown -R $NAME:$NAME /user_data
+        echo "cd /user_data" >> /etc/bash.bashrc
     fi
 fi
 touch already_ran;
