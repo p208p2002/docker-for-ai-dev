@@ -52,6 +52,7 @@ RUN sudo apt install nodejs
 
 # vscode-server
 RUN npm install -g yarn&&yarn global add code-server
+ENV SHELL=/bin/bash
 
 #
 EXPOSE 22
