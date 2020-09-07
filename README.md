@@ -20,7 +20,7 @@ Dockerfiles for quickly create remote dev env for pytorch & tensorflow
 ## Usage
 choose one: CLI Tool or CMD Generator
 
-### CLI Tool **recommand**
+### CLI Tool
 - [p208p2002/docker-for-ai-dev-cli](https://github.com/p208p2002/docker-for-ai-dev-cli)
 
 ### CMD Generator ![Build and Deploy](https://github.com/p208p2002/docker-for-ai-dev/workflows/Build%20and%20Deploy/badge.svg?branch=site-src)
