@@ -13,6 +13,7 @@ else
         # change HOME dir for user
         usermod -d /user_data $NAME
         cp /etc/skel/.bashrc /user_data
+        cp /etc/skel/.profile /user_data
     fi
 fi
 touch already_ran;
