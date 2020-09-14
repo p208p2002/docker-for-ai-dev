@@ -10,7 +10,9 @@ else
     if [ -d "/user_data" ]; then 
         # volume exists" 
         chown -R $NAME:$NAME /user_data
-        # echo "cd /user_data" >> /etc/bash.bashrc
+        # change HOME dir for user
+        usermod -d /user_data $NAME
+        cp /etc/skel/.bashrc /user_data
     fi
 fi
 touch already_ran;
