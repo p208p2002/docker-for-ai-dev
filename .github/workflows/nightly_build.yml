@@ -9,7 +9,7 @@ on:
     - cron: '0 0 * * *'
 
 jobs:
-  build_cu100:
+  nightly_build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
