@@ -33,8 +33,7 @@ COPY script_files/docker_start.sh /docker_start.sh
 RUN chmod 777 /docker_start.sh
 
 # pytorch
-RUN pip install numpy \
-    pip install --pre torch torchvision torchaudio -f https://download.pytorch.org/whl/nightly/cu101/torch_nightly.html
+RUN pip install torch==1.7.0
 
 # jupyter
 COPY config_files/jupyter_notebook_config.py /root/.jupyter/jupyter_notebook_config.py
