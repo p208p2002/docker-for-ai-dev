@@ -8,8 +8,6 @@ else
     echo $NAME:$PASSWORD | chpasswd;
     # change volume owner for access promise
     if [ -d "/user_data" ]; then 
-        # volume exists" 
-        chown -R $NAME:$NAME /user_data
         # change HOME dir for user
         usermod -d /user_data $NAME
         cp /etc/skel/.bashrc /user_data
@@ -18,6 +16,8 @@ else
         mkdir /user_data/.jupyter
         cp /root/.jupyter/jupyter_notebook_config.py /user_data/.jupyter/jupyter_notebook_config.py
         chmod -R 775 /user_data/.jupyter
+        # user own /user_data
+        chown -R $NAME:$NAME /user_data
     fi
 fi
 touch already_ran;
