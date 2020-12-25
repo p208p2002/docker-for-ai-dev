@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/docker-for-ai-dev/static/css/main.54938683.chunk.css",
-    "main.js": "/docker-for-ai-dev/static/js/main.1456f624.chunk.js",
-    "main.js.map": "/docker-for-ai-dev/static/js/main.1456f624.chunk.js.map",
+    "main.js": "/docker-for-ai-dev/static/js/main.9a2b05d5.chunk.js",
+    "main.js.map": "/docker-for-ai-dev/static/js/main.9a2b05d5.chunk.js.map",
     "runtime-main.js": "/docker-for-ai-dev/static/js/runtime-main.801fcd5c.js",
     "runtime-main.js.map": "/docker-for-ai-dev/static/js/runtime-main.801fcd5c.js.map",
     "static/js/2.1134dc98.chunk.js": "/docker-for-ai-dev/static/js/2.1134dc98.chunk.js",
     "static/js/2.1134dc98.chunk.js.map": "/docker-for-ai-dev/static/js/2.1134dc98.chunk.js.map",
     "index.html": "/docker-for-ai-dev/index.html",
-    "precache-manifest.b93712719f64d3399df6c8c226a768ae.js": "/docker-for-ai-dev/precache-manifest.b93712719f64d3399df6c8c226a768ae.js",
+    "precache-manifest.424315b61507d2abda0bf07da3a4a90e.js": "/docker-for-ai-dev/precache-manifest.424315b61507d2abda0bf07da3a4a90e.js",
     "service-worker.js": "/docker-for-ai-dev/service-worker.js",
     "static/css/main.54938683.chunk.css.map": "/docker-for-ai-dev/static/css/main.54938683.chunk.css.map",
     "static/js/2.1134dc98.chunk.js.LICENSE.txt": "/docker-for-ai-dev/static/js/2.1134dc98.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.801fcd5c.js",
     "static/js/2.1134dc98.chunk.js",
     "static/css/main.54938683.chunk.css",
-    "static/js/main.1456f624.chunk.js"
+    "static/js/main.9a2b05d5.chunk.js"
   ]
 }

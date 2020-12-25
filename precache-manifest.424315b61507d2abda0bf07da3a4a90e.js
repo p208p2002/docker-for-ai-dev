@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d4ac172f65f67efb442048f696624710",
+    "revision": "c30d9c0547b8c74808b86cec18f9ff1c",
     "url": "/docker-for-ai-dev/index.html"
   },
   {
-    "revision": "e2fcf6ad7fa7db369ec0",
+    "revision": "06eaa9bc7f7654594615",
     "url": "/docker-for-ai-dev/static/css/main.54938683.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/docker-for-ai-dev/static/js/2.1134dc98.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e2fcf6ad7fa7db369ec0",
-    "url": "/docker-for-ai-dev/static/js/main.61302814.chunk.js"
+    "revision": "06eaa9bc7f7654594615",
+    "url": "/docker-for-ai-dev/static/js/main.9a2b05d5.chunk.js"
   },
   {
     "revision": "b9b6a4488b8c7bc13775",
