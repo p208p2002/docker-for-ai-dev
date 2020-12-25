@@ -36,7 +36,7 @@ export class App extends Component {
       portingInputValue: '',
       name: '',
       password: '',
-      create_volume:false
+      create_volume:true
     }
 
     this.portingInput = React.createRef()
@@ -109,7 +109,8 @@ export class App extends Component {
     let mountVolumeCMD = undefined
     if(create_volume === true){
       createVolumeCMD = `docker volume create ${_name}`
-      mountVolumeCMD = `-v ${_name}:/root/${_name} -v ${_name}:/home/${_name}`
+      // mountVolumeCMD = `-v ${_name}:/root/user_data -v ${_name}:/home/${_name}/user_data`
+      mountVolumeCMD = `-v ${_name}:/user_data`
       cmd = `${createVolumeCMD} && ${docker} ${mountVolumeCMD} ${options.join(' ')} ${ports.join(' ')} ${sshPorting} ${jupyterPorting} ${codeServerPorting} ${name} ${password} ${image}`
     }
     else{
@@ -175,7 +176,7 @@ export class App extends Component {
                 type="checkbox"
                 className="form-check-input"
                 id="create_volume"
-                defaultChecked={false}
+                defaultChecked={true}
                 onChange={()=>{
                   this.setState({
                     create_volume:!this.state.create_volume
