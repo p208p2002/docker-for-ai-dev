@@ -52,7 +52,7 @@ RUN echo 'export LC_ALL="en_US.utf8"' >> /etc/bash.bashrc
 RUN update-locale LANG=en_US.utf8
 
 # nodejs
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN sudo apt install nodejs
 
 # vscode-server
