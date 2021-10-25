@@ -23,11 +23,9 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_PWD }}
     - name: Build
       run: |
-        docker build -t=p208p2002/docker-for-ai-dev:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode -f cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode .
         docker build -t=p208p2002/docker-for-ai-dev:cu10.1-py36-tf2.3.0-torch1.6.0-jupyter-vscode -f cu10.1-py36-tf2.3.0-torch1.6.0-jupyter-vscode .
         docker build -t=p208p2002/docker-for-ai-dev:cu10.1-py36-tf2.3.1-torch1.7.0-jupyter-vscode -f cu10.1-py36-tf2.3.1-torch1.7.0-jupyter-vscode .
     - name: Push
       run: |
-        docker push p208p2002/docker-for-ai-dev:cu10.0-py36-tf1.14.0-torch1.3-jupyter-vscode
         docker push p208p2002/docker-for-ai-dev:cu10.1-py36-tf2.3.0-torch1.6.0-jupyter-vscode
         docker push p208p2002/docker-for-ai-dev:cu10.1-py36-tf2.3.1-torch1.7.0-jupyter-vscode
